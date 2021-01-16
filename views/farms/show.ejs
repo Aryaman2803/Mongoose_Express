@@ -19,9 +19,19 @@
         <li>Email: <%= farm.email %>
         </li>
     </ul>
+    <h2>Products</h2>
+    <ul>
+        <% for (let product of farm.products) {%>
+            <li>
+                <%=product.name %>
+            </li>
+            <% } %>
+    </ul>
+    <a href="/farms/<%=farm._id%>/products/new">Add Product</a>
     <a href="/farms">All Farms</a>
     <br>
-  
+    <form action="/farms/<%=farm._id%>?_method=DELETE" method="POST"><button>Delete</button></form>
+
 </body>
 
 </html>
